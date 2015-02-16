@@ -123,13 +123,11 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 
-  <?php if ( function_exists('gravity_form_enqueue_scripts') ) { gravity_form_enqueue_scripts(1, true); } ?>
-  <?php if ( function_exists('gravity_form_enqueue_scripts') ) { gravity_form_enqueue_scripts(2, true); } ?>
 	<?php wp_head(); ?>
 
 </head>
 
-<body <?php body_class(); ?> id="<?php echo get_field( 'this_site', 'option' ); ?>">
+<body <?php body_class(); ?>>
 
   <?php echo do_shortcode('[header-nav]'); ?>
 

@@ -5,15 +5,12 @@ function remove_parent_menu_location() {
     unregister_nav_menu( 'primary' );
 }
 add_action( 'after_setup_theme', 'remove_parent_menu_location', 20 );
-/*register_nav_menu( 'header-nav', __( 'Main Navigation Header', 'mindfulliving' ) );
-register_nav_menu( 'footer-drkathleenhall', __( 'Footer Menu One', 'mindfulliving' ) );
-register_nav_menu( 'footer-thestressinstitute', __( 'Footer Menu Two', 'mindfulliving' ) );
-register_nav_menu( 'footer-mindfullivingnetwork', __( 'Footer Menu Three', 'mindfulliving' ) );*/
+//register_nav_menu( 'header-nav', __( 'Main Navigation Header', 'portfoliotheme' ) );
 // shortcode components
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
-/*require_once(get_stylesheet_directory().'/components/header-nav.php');
-require_once(get_stylesheet_directory().'/components/grid.php');
+require_once(get_stylesheet_directory().'/components/header-nav.php');
+/*require_once(get_stylesheet_directory().'/components/grid.php');
 require_once(get_stylesheet_directory().'/components/presentation.php');
 require_once(get_stylesheet_directory().'/components/blog-post-preview.php');
 require_once(get_stylesheet_directory().'/components/ask-feed.php');
