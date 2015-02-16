@@ -5,7 +5,7 @@ function remove_parent_menu_location() {
     unregister_nav_menu( 'primary' );
 }
 add_action( 'after_setup_theme', 'remove_parent_menu_location', 20 );
-//register_nav_menu( 'header-nav', __( 'Main Navigation Header', 'portfoliotheme' ) );
+register_nav_menu( 'header-nav', __( 'Main Navigation Header', 'portfoliotheme' ) );
 // shortcode components
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);

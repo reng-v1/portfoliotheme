@@ -19,13 +19,13 @@ function main_nav(){
   ob_end_flush();
 
   $content = '<header class="no-margin">
-                <div class="main-nav-wrapper hide-for-small">
+                <div class="main-nav-wrapper">
                   <div class="center-wrapper">
                     <div class="grid-row no-margin">
-                      <div class="col small-col-4">
-                        <a href="#" class="nav-logo"></a>
+                      <div class="col small-col-6">
+                        <h1 class="nav-logo"><a href="#">Ryan Eng</a></h1>
                       </div>
-                      <div class="col small-col-8">
+                      <div class="col small-col-6">
                         <nav class="main-nav">'.$menuMarkup.'</nav>
                       </div>
                     </div>
