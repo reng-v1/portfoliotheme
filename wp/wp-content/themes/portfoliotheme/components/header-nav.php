@@ -22,10 +22,10 @@ function main_nav(){
                 <div class="main-nav-wrapper">
                   <div class="center-wrapper">
                     <div class="grid-row no-margin">
-                      <div class="col small-col-6">
+                      <div class="col small-col-12 medium-col-4">
                         <h1 class="nav-logo"><a href="#">Ryan Eng</a></h1>
                       </div>
-                      <div class="col small-col-6">
+                      <div class="col small-col-12 medium-col-8">
                         <nav class="main-nav">'.$menuMarkup.'</nav>
                       </div>
                     </div>
