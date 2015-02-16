@@ -1,0 +1,259 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+
+//----Variables----//
+$heading-font: "Montserrat", sans-serif;
+$body-font: Arial, sans-serif;
+$dark: rgb(12,14,15);
+$gray: rgb(109,109,109);
+$white: rgb(255,255,255);
+$pink: rgb(240,43,117);
+$heavy: bold;
+$defaultDuration: .3s;
+
+//----Styles----//
+body{
+  color:$dark;
+  font-family:$body-font;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $heading-font;
+  color: $dark;
+  text-transform: uppercase;
+}
+
+h1{
+  font-size: 3.4em;
+  line-height: 1em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+h2{
+  font-size: 2.25em;
+  line-height: 1em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+h3{
+  font-size: 1.9em;
+  line-height: 1em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+h4{
+  font-size: 1.5em;
+  line-height: 1em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+h5{
+  font-size: 1.2em;
+  line-height: 0.8em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+h6{
+  font-size: 1em;
+  line-height: 0.5em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+p {
+  font-size: 0.9em;
+  line-height: 1.5em; 
+}
+a {
+  font-weight: $heavy;
+  color: $pink;
+  text-decoration: none;
+  &:hover {
+    color:$gray;
+  }
+}
+ul{
+  margin: 0;
+	padding: 0;
+}
+
+.body-list {
+  color: $dark;
+  font-size: 1em;
+  font-weight: $heavy;
+  list-style: none;
+  padding: 0.8em;
+  margin-left: 2em;
+  a{
+    color:$dark;
+    &:hover{
+      color:$pink;
+    }
+  }
+  &:before{
+    margin-left: -0.8em;
+    margin-top:-5px;
+    position:absolute;
+    content: "\f363";
+    font-family: Ionicons;
+    display: inline-block;
+    font-size: 1.5em;
+    width: 0.8em;
+  }
+}
+
+.category-title {
+  padding-right:5px;
+  display:inline-block;
+  p{
+    color:$gray;
+    font-weight:$heavy;
+  }
+}
+
+.category-list{  
+  display:inline-block;
+  p{
+    color: $gray;
+  }
+  a{
+    color:$gray;
+    font-weight:normal;
+    &:hover{
+      color:$pink;
+    }
+  }
+}
+
+//----Related Project----//
+.related-project div{
+  margin: 10px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border:4px solid $dark;
+  max-width:340px;
+  max-height:250px;
+  display:inline-block;
+}
+
+.related-project .related-overlay {
+  height:100%;
+  width:100%;  
+  background-color: $dark;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  opacity:0.9;
+  transform: scale(1.5) skew(-45deg) translate(400px);
+  -webkit-transition: .2s ease-in;
+  -moz-transition: .2s ease-in;
+  -o-transition: .2s ease-in;
+  -ms-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+.related-project h5{
+  color:$white;
+  position:absolute;
+  left:8%;
+  z-index:1;
+  opacity:0;
+  transform: translateY(80%);
+  transition: .3s ease-out;
+}
+
+.related-project div:hover > .related-overlay{
+  transform: scale(1.5) skew(-45deg) translate(10px);
+}
+
+.related-project div:hover > h5{
+  transform: translateY(-165px);
+  opacity:1;
+}
+
+.social{
+  background-color: $dark;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//----Icons----//
+.icons {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.linkedin {
+  color: $white;
+  font-size: 7em;
+  margin-right:20px;
+  &:hover{
+    color:$gray;
+  }
+}
+
+.twitter {
+  color: $white;
+  font-size: 7em;
+  margin-right:20px;
+  &:hover{
+    color:$gray;
+  }
+}
+
+.github {
+  color: $white;
+  font-size: 7em;
+  margin-right:20px;
+  &:hover{
+    color:$gray;
+  }
+}
+
+.codepen {
+  color: $white;
+  font-size: 7em;
+  &:hover{
+    color:$gray;
+  }
+}
+//---CSS3 Animations---//
+
+.grow-rotate {
+	display: inline-block;
+	transition-duration: $defaultDuration;
+	transition-property: all; 
+	&:hover {	
+		transform: scale(1.1) rotate(20deg);
+	}
+}

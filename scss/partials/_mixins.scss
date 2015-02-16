@@ -1,0 +1,146 @@
+/**
+* Standard Issue SCSS
+* Ninja Multimedia
+* Extendable classes and mixins
+**/
+
+@import "compass/css3/transform";
+
+/**
+* Null transform hack
+* http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/
+**/
+.null-transform {
+  @include translate3d( 0, 0, 0 ); 
+}
+
+/**
+* Absolute Centering
+* extendable class
+*
+* @description Takes an element and snaps it to to the center of a container using absolute centering method.
+* @usage "@extend .absolute-center;"
+**/
+.absolute-center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/**
+* Snap To Left
+* extendable class
+*
+* @description Takes an element and snaps it to upper left corner by positioning it absolutely.
+* @usage "@extend .snap-to-left;"
+**/
+.snap-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/**
+* Hide Text Replacement
+* extendable class
+*
+* @description Kellum Method for hiding text.
+* @usage "@extend .hide-text;"
+**/
+.hide-text {
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/**
+* Absolute Element
+* mixin
+*
+* @description Takes an element and places it absolutely according to top and left parameters.
+* @param $left The left coordinate for absolute positioning. Requires unit of measurement. Default is 0px.
+* @param $top The top coordinate for absolute positioning. Requires unit of measurement. Default is 0px.
+* @usage "@include absolute-element(50%,10px);"
+**/
+@mixin absolute-element($left:0px,$top:0px){
+	position:absolute;
+	left:$left;
+	top:$top;
+}
+
+/**
+* Image Background Replacement
+* mixin
+*
+* @description Assigns a non-repeating background image to an element, and sets the width and height of the element to that of the image. Useful for image replacements.
+* @param $image-path The path to the image to be used in the background.
+* @param $pixel-density A pixel density ratio to account for background image sizing. Useful for retina display. Default is 1.
+* @usage "@include background-image('name-of-image.jpg',1.5);"
+**/
+@mixin background-image($image-path,$pixel-density:1){
+	width:floor(image-width($image-path)*(1/$pixel-density));
+	height:floor(image-height($image-path)*(1/$pixel-density));
+	background-image:image-url($image-path);
+	background-size:floor(image-width($image-path)*(1/$pixel-density)) floor(image-height($image-path)*(1/$pixel-density));
+	background-repeat:no-repeat;
+}
+
+/**
+* rem Font Sizing mixin
+* based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+* by Gabe Luethje
+**/
+html { font-size: 62.5%; /* Sets up the Base 10 stuff */ } // comment this line out to disable base-10 sizing.
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+@mixin line-height($sizeValue: 1.6) {
+  line-height: ($sizeValue * 10) + px;
+  line-height: $sizeValue + rem;
+}
+
+/**
+* rems-by-five classes and sub-classes for use with rem sizing
+**/
+.rem-by-fives {
+  &.thirty               { @include font-size(3); }
+  &.thirty-five          { @include font-size(3.5); }
+  &.forty                { @include font-size(4.0); }
+  &.forty-five           { @include font-size(4.5); }
+  &.fifty                { @include font-size(5.0); }
+  &.fifty-five           { @include font-size(5.5); }
+  &.sixty                { @include font-size(6.0); }
+  &.sixty-five           { @include font-size(6.5); }
+  &.seventy              { @include font-size(7.0); }
+  &.seventy-five         { @include font-size(7.5); }
+  &.eighty               { @include font-size(8.0); }
+  &.eighty-five          { @include font-size(8.5); }
+  &.ninety               { @include font-size(9.0); }
+  &.ninety-five          { @include font-size(9.5); }
+  &.one-hundred          { @include font-size(10.0); }
+  &.hundred-ten          { @include font-size(11.0); }
+  &.hundred-fifteen      { @include font-size(11.5); }
+  &.hundred-twenty       { @include font-size(12.0); }
+  &.line-thirty-five     { @include line-height(3.5); }
+  &.line-forty           { @include line-height(4.0); }
+  &.line-forty-five      { @include line-height(4.5); }
+  &.line-fifty           { @include line-height(5.0); }
+  &.line-fifty-five      { @include line-height(5.5); }
+  &.line-sixty           { @include line-height(6.0); }
+  &.line-sixty-five      { @include line-height(6.5); }
+  &.line-seventy         { @include line-height(7.0); }
+  &.line-seventy-five    { @include line-height(7.5); }
+  &.line-eighty          { @include line-height(8.0); }
+  &.line-eighty-five     { @include line-height(8.5); }
+  &.line-ninety          { @include line-height(9.0); }
+  &.line-ninety-five     { @include line-height(9.5); }
+  &.line-one-hundred     { @include line-height(10.0); }
+  &.line-hundred-ten     { @include line-height(11.0); }
+  &.line-hundred-fifteen { @include line-height(11.5); }
+  &.line-hundred-twenty  { @include line-height(12.0); }
+}
