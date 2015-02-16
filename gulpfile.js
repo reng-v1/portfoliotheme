@@ -16,11 +16,11 @@ gulp.task('compass', function() {
     css: 'css',
     sass: 'scss',
     image: './images',
-    javascript: 'wp/wp-content/themes/mindfulliving/js',
+    javascript: 'wp/wp-content/themes/portfoliotheme/js',
     relative: true
   }))
   .pipe(minifyCSS())
-  .pipe(gulp.dest('wp/wp-content/themes/mindfulliving/css'));
+  .pipe(gulp.dest('wp/wp-content/themes/portfoliotheme/css'));
 });
 
 gulp.task('watch', function() {
@@ -30,9 +30,9 @@ gulp.task('watch', function() {
 });
 
 gulp.task('imagemin', function() {
-  return gulp.src('wp/wp-content/themes/mindfulliving/images/**/*')
+  return gulp.src('wp/wp-content/themes/portfoliotheme/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 6, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('wp/wp-content/themes/mindfulliving/images'));
+    .pipe(gulp.dest('wp/wp-content/themes/portfoliotheme/images'));
 });
 
 
