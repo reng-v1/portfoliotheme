@@ -49,6 +49,9 @@
 			font-size: 2rem;
 			font-weight: bold;
 			text-transform: uppercase;
+			-webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;
 			&:hover {
 				background-color: $white;
 				color: $dark;
