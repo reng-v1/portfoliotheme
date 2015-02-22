@@ -101,8 +101,8 @@ ul{
 }
 
 .category-title {
-  padding-right:5px;
-  display:inline-block;
+  padding-left:15px;
+  display:block;
   p{
     color:$gray;
     font-weight:$heavy;
@@ -110,7 +110,8 @@ ul{
 }
 
 .category-list{  
-  display:inline-block;
+  display:block;
+  padding-left: 15px;
   p{
     color: $gray;
   }
@@ -121,51 +122,4 @@ ul{
       color:$pink;
     }
   }
-}
-
-//----Related Project----//
-.related-project div{
-  margin: 10px;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  border:4px solid $dark;
-  width:30%;
-  max-height:250px;
-  display:inline-block;
-}
-
-.related-project .related-overlay {
-  height:100%;
-  width:100%;  
-  background-color: $dark;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  opacity:0.9;
-  transform: scale(1) skew(-45deg) translate(400px);
-  -webkit-transition: .2s ease-in;
-  -moz-transition: .2s ease-in;
-  -o-transition: .2s ease-in;
-  -ms-transition: .2s ease-in;
-  transition: .2s ease-in;
-}
-.related-project h5{
-  color:$white;
-  position:absolute;
-  left:25%;
-  z-index:1;
-  opacity:0;
-  transform: translateY(80%);
-  transition: .3s ease-out;
-}
-
-.related-project div:hover > .related-overlay{
-  transform: scale(1.5) skew(-45deg) translate(10px);
-} 
-
-.related-project div:hover > h5{
-  transform: translateY(-115px);
-  opacity:1;
 }
