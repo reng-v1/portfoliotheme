@@ -6,7 +6,54 @@ $(document).ready(function(){
 			fadeGallery.init();
 		});
 	}
+
+	if( $('.swipe').length > 0 ) {
+		var slideGalleries = $('.swipe');
+		$(slideGalleries).each(function() {
+			var slideGalleries = new SlideGallery($(this));
+			slideGalleries.init();
+		});
+	}
+
 });
+
+var SlideGallery = function(sel) {
+	var elementID = $(sel).attr('id');
+	var leftArrow = $('.project-wrapper').find('.left-arrow');
+	var rightArrow = $('.project-wrapper').find('.right-arrow');
+	var projectTitle = $(sel).find('.project-title h1');
+
+	var projectSlider = new Swipe(document.getElementById(elementID), {
+	  speed: 600,
+	  callback: animTitle
+	});
+
+	function animTitle(index, elem) {
+		setup();
+		TweenMax.to($(projectTitle[index]), 1, {autoAlpha: 1, x: 0});
+	}
+
+	var setup = function() {
+		TweenMax.set(projectTitle, {autoAlpha: 0, x: 200});
+	}
+
+	var init = function() {
+		setup();
+		TweenMax.to($(projectTitle[0]), 1,{autoAlpha: 1, x: 0});
+		$(leftArrow).on('click', function() {
+			projectSlider.prev();
+		});
+		$(rightArrow).on('click', function() {
+			projectSlider.next();
+		});
+	};
+
+	return {
+		init: function() {
+			init();
+		}
+	};
+}
 
 var FadeGallery = function(sel) {
 	var images = $(sel).find('.image');
