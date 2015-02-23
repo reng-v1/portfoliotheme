@@ -7,7 +7,13 @@
 ?>
 
 <?php
-  $localSite = get_field('this_site', 'option');
+  $emailAddress     = get_field('email_address', 'option');
+  $aboutImage       = get_field('about_image', 'option');
+  $aboutDescription = get_field('about_description', 'option');
+  $linkinLink       = get_field('linkin_url', 'option');
+  $twitterLink      = get_field('twitter_url', 'option');
+  $githubLink       = get_field('github_url', 'option');
+  $codepenLink      = get_field('codepen_url', 'option');
 ?>
 	</div>
 
@@ -32,18 +38,26 @@
         <div class="col small-col-12 medium-col-6">
           <div class="about-section">
             <div class="about-image">
-              <img src="<?php echo get_stylesheet_directory_uri().'/images/about-me-pic.jpg'?>" />
+              <img src="<?php echo $aboutImage; ?>" />
             </div>
             <div class="about-content">
               <h2>About Me</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu purus vehicula, finibus nisi sit amet, viverra leo. In dapibus felis sit amet sollicitudin ultrices. Quisque venenatis mollis ligula, sit amet viverra est sagittis ut. Morbi a massa vitae magna consequat sodales non nec erat.</p>
+              <p><?php echo $aboutDescription; ?></p>
             </div>
-            <h1><a class="emailaddress" href="">ryanengkl@gmail.com</a></h1>
+            <h1><a class="emailaddress" href=""><?php echo $emailAddress; ?></a></h1>
             <div class="icons-wrapper">
-              <a href="#" class="icon"><i class="linkedin grow-rotate ion-social-linkedin"></i></a>
-              <a href="#" class="icon"><i class="twitter grow-rotate ion-social-twitter"></i></a>
-              <a href="#" class="icon"><i class="github grow-rotate ion-social-github"></i></a>
-              <a href="#" class="icon"><i class="codepen grow-rotate ion-social-codepen"></i></a>
+              <?php if($linkinLink) { ?>
+              <a href="<?php echo $linkinLink; ?>" class="icon"><i class="linkedin grow-rotate ion-social-linkedin"></i></a>
+              <?php } ?>
+              <?php if ($twitterLink) { ?>
+              <a href="<?php echo $twitterLink; ?>" class="icon"><i class="twitter grow-rotate ion-social-twitter"></i></a>
+              <?php } ?>
+              <?php if($githubLink) { ?>
+              <a href="<?php echo $githubLink; ?>" class="icon"><i class="github grow-rotate ion-social-github"></i></a>
+              <?php } ?>
+              <?php if($codepenLink) { ?>
+              <a href="<?php echo $codepenLink; ?>" class="icon"><i class="codepen grow-rotate ion-social-codepen"></i></a>
+              <?php } ?>
             </div>
           </div>
         </div>

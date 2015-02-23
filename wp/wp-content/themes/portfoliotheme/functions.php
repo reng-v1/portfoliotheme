@@ -28,14 +28,14 @@ require_once(get_stylesheet_directory().'/components/recent-community-question.p
 //require_once(get_stylesheet_directory().'/multi-site-content.php');
 
 // setting up an ACF options page
-/*if( function_exists('acf_add_options_page') ) {
+if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-  	'page_title' 	=> 'Mindful Living Theme Settings',
-  	'menu_title'	=> 'Mindful Living Theme Settings',
+  	'page_title' 	=> 'Theme Settings',
+  	'menu_title'	=> 'Theme Settings',
   	'menu_slug' 	=> 'theme-general-settings',
   	'position'    => '2.5'
   ));
-}*/
+}
 
 // setting up our shortcode dropdown plugin for TinyMCE
 function register_mlnshortcode_button( $buttons ) {
