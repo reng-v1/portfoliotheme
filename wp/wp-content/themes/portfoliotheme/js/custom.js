@@ -30,7 +30,7 @@ var SlideGallery = function(sel) {
 
 	function animTitle(index, elem) {
 		setup();
-		TweenMax.to($(projectTitle[index]), 1, {autoAlpha: 1, x: 0});
+		TweenMax.to($(projectTitle[index]), 1, {autoAlpha: 1, x: 0, delay: 0.5});
 	}
 
 	var setup = function() {
