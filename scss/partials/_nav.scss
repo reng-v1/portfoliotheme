@@ -86,6 +86,8 @@
 			}
 		}
 		li.current-menu-item a, li a:hover {
+			background-color: transparent;
+			color: $dark;
 			&:before {
 				display: none;
 			}

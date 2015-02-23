@@ -23,7 +23,7 @@
 
       <div class="grid-row">
         <div class="col small-col-12">
-          <h1>Contact Me</h1>
+          <h1 id="contact">Contact Me</h1>
         </div>
       </div>
 
