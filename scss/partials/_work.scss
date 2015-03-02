@@ -1,5 +1,61 @@
 /*Work Styles*/
 
+.button-wrapper {
+	width: 100%;
+	height: 62px;
+	position: relative;
+	cursor: pointer;
+	.site-btn {
+		display: block;
+		width: 190px;
+		height: 42px;
+		background-color: $dark;
+		padding: 14px 10px;
+		margin: 0 auto;
+		position: absolute;
+		top: 10px; bottom: 0px; right: 0; left: 0;
+		text-align: center;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		color: white;
+		z-index: 5;
+	}
+	.button-hover {
+		display: block;
+		width: 188px;
+		height: 42px;
+		margin: 0 auto;
+		position: absolute;
+		-webkit-transition: .2s ease-in;
+		-moz-transition: .2s ease-in;
+		-o-transition: .2s ease-in;
+		-ms-transition: .2s ease-in;
+		transition: .2s ease-in;
+		&.button-hover-top {
+			background-image: url('../images/site-btn-border-top.png');
+			top:10px;
+			right:0;
+			left: 0;
+			transform: translate(0px, 0px);
+		}
+		&.button-hover-bottom {
+			background-image: url('../images/site-btn-border-bottom.png');
+			bottom:10px;
+			right:0;
+			left:0;
+			transform: translate(0px, 0px);
+		}
+	}
+	&:hover {
+		.button-hover-top {
+			transform: translate(10px, -10px);
+		}
+		.button-hover-bottom {
+			transform: translate(-10px, 10px);
+		}
+	}
+}
+
 // Project Slider
 #project-gallery {
 	margin-bottom: 30px;
@@ -142,62 +198,6 @@
 			}
 		}
 	}
-
-	.button-wrapper {
-		width: 100%;
-		height: 62px;
-		position: relative;
-		cursor: pointer;
-		.site-btn {
-			display: block;
-			width: 190px;
-			height: 42px;
-			background-color: $dark;
-			padding: 14px 10px;
-			margin: 0 auto;
-			position: absolute;
-			top: 10px; bottom: 0px; right: 0; left: 0;
-			text-align: center;
-			font-size: 1.4rem;
-			text-transform: uppercase;
-			color: white;
-			z-index: 5;
-		}
-		.button-hover {
-			display: block;
-			width: 188px;
-			height: 42px;
-			margin: 0 auto;
-			position: absolute;
-			-webkit-transition: .2s ease-in;
-			-moz-transition: .2s ease-in;
-			-o-transition: .2s ease-in;
-			-ms-transition: .2s ease-in;
-			transition: .2s ease-in;
-			&.button-hover-top {
-				background-image: url('../images/site-btn-border-top.png');
-				top:10px;
-				right:0;
-				left: 0;
-				transform: translate(0px, 0px);
-			}
-			&.button-hover-bottom {
-				background-image: url('../images/site-btn-border-bottom.png');
-				bottom:10px;
-				right:0;
-				left:0;
-				transform: translate(0px, 0px);
-			}
-		}
-		&:hover {
-			.button-hover-top {
-				transform: translate(10px, -10px);
-			}
-			.button-hover-bottom {
-				transform: translate(-10px, 10px);
-			}
-		}
-	}
 }
 
 //----Related Project----//
@@ -209,7 +209,7 @@
 
 .related-project-wrapper {
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .related-project-wrapper .related-project{
@@ -283,6 +283,10 @@
 	&.active {
 		display: block;
 	}
+}
+
+.projects-btn {
+	margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px) {

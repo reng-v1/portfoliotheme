@@ -180,6 +180,16 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+
+<div class="grid-row">
+	<div class="col small-col-12">
+		<div class="button-wrapper projects-btn">
+			<div class="button-hover button-hover-top"></div>
+			<a href="/?page_id=435" class="site-btn">View All Projects</a>
+			<div class="button-hover button-hover-bottom"></div>
+		</div>
+	</div>
+</div>
 <?php } ?>
 
 <?php get_footer(); ?>
