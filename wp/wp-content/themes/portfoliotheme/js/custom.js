@@ -37,6 +37,7 @@ var SlideGallery = function(sel) {
 	var leftArrow = $('.project-wrapper').find('.left-arrow');
 	var rightArrow = $('.project-wrapper').find('.right-arrow');
 	var projectTitle = $(sel).find('.project-title h1');
+	var relatedProjects = $('.related-project-wrapper .related-slide');
 
 	var projectSlider = new Swipe(document.getElementById(elementID), {
 	  speed: 600,
@@ -46,6 +47,15 @@ var SlideGallery = function(sel) {
 	function animTitle(index, elem) {
 		setup();
 		TweenMax.to($(projectTitle[index]), 1, {autoAlpha: 1, x: 0, delay: 0.5});
+		
+		//Animate Related Projects
+		if(relatedProjects.length > 0) {
+			TweenMax.to(relatedProjects, 0.5, {autoAlpha: 0, onComplete: function() {
+				$(relatedProjects).removeClass('active');
+				$(relatedProjects[index]).addClass('active');
+			}});
+			TweenMax.to(relatedProjects[index], 0.75, {autoAlpha: 1, y: 0}, '-=1');
+		}
 	}
 
 	var setup = function() {
@@ -53,6 +63,11 @@ var SlideGallery = function(sel) {
 	}
 
 	var init = function() {
+		if(relatedProjects.length > 0) {
+			TweenMax.set(relatedProjects, {autoAlpha: 0});
+			TweenMax.set(relatedProjects[0], {autoAlpha: 1});
+			$(relatedProjects[0]).addClass('active');
+		}
 		setup();
 		TweenMax.to($(projectTitle[0]), 1,{autoAlpha: 1, x: 0});
 		$(leftArrow).on('click', function() {

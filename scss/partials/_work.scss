@@ -66,7 +66,7 @@
 		overflow: hidden;
 		h1 {
 			width: 100%;
-			height: 20%;
+			height: 30%;
 			overflow: auto;
 			margin: auto;
 			position: absolute;
@@ -83,11 +83,18 @@
 		position: relative;
 		width: 100%;
 		margin-bottom: 15px;
+		text-align: center;
+		overflow: hidden;
 		.image {
 			position: absolute;
 			top: 0;
-			left:0;
-			width: 100%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: auto;
+			max-width: 550px;
+			max-height: 350px;
 			&:first-child {
 				position: relative;
 			}
@@ -113,6 +120,10 @@
 			}
 			&.active .overlay {
 				display: none;
+			}
+			img {
+				width: auto;
+				height: 50px;
 			}
 		}
 	}
@@ -197,20 +208,28 @@
 }
 
 .related-project-wrapper {
-  text-align: center;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .related-project-wrapper .related-project{
   margin: 10px;
-  padding: 0;
   position: relative;
   overflow: hidden;
   border: 4px solid $dark;
-  width: 28%;
-  max-height: 250px;
-  display: inline-block;
+  height: 200px;
+  display: block;
   cursor: pointer;
+  text-align: center;
+  a {
+	  display: block;
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 1;
+  }
 }
 
 .related-project-wrapper .related-overlay {
@@ -229,23 +248,41 @@
   -ms-transition: .2s ease-in;
   transition: .2s ease-in;
 }
-.related-project-wrapper .project-image-wrapper h5{
-  color:$white;
-  position:absolute;
-  left:15%;
-  z-index:1;
-  opacity:0;
-  transform: translateY(80%);
-  transition: .3s ease-out;
+.related-project-wrapper .project-image-wrapper {
+	img {
+		height: 200px;
+	}
+	h5{
+		width: 125px;
+		height: 50px;
+	  color:$white;
+	  position:absolute;
+	  top:0;
+	  left:0;
+	  bottom:0;
+	  right:0;
+	  margin: auto;
+	  z-index:1;
+	  opacity:0;
+	  transform: translateY(200px);
+	  transition: .3s ease-out;
+  }
 }
 
-.related-project-wrapper .project-image-wrapper:hover > .related-overlay{
+.related-project-wrapper .related-project:hover .project-image-wrapper > .related-overlay{
   transform: scale(1.5) skew(-45deg) translate(10px);
 } 
 
-.related-project-wrapper .project-image-wrapper:hover > h5{
-  transform: translateY(-115px);
+.related-project-wrapper .related-project:hover .project-image-wrapper > h5{
+  transform: translateY(0px);
   opacity:1;
+}
+
+.related-slide {
+	display: none;
+	&.active {
+		display: block;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -253,6 +290,28 @@
 		.button-wrapper { 
 			.button-hover {
 				display: none;
+			}
+		}
+	}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.show-device {
+		display: inherit !important;
+	}
+	.hide-device {
+		display: none !important;
+	}
+	.related-project-wrapper {
+		.related-project {
+			max-height: initial;
+			margin: 10px 10px 30px;
+			border: none;
+			overflow: initial;
+			vertical-align: top;
+			h5 {
+				margin-top: 15px;
 			}
 		}
 	}
@@ -306,9 +365,13 @@
 		padding: 0 15px;
 		.related-project {
 			width: 100%;
-			margin: 0 0 30px 0;
+			max-height: initial;
+			margin: 0 0 60px 0;
 			border: none;
-			overflow: initial
+			overflow: initial;
+			h5 {
+				margin-top: 15px;
+			}
 		}
 	}
 }
